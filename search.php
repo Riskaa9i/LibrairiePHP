@@ -52,9 +52,9 @@ if (!isset($_SESSION['user_id'])) {
 
 // Vérifie si une recherche est effectuée
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['query'])) {
-    $searchQuery = htmlspecialchars($_POST['query']); // Convertit les caractères spéciaux en html pour éviter les failles XSS et récupère le query (recherche du user)
+    $search = htmlspecialchars($_POST['query']); // Convertit les caractères spéciaux en html pour éviter les failles XSS et récupère le query (recherche du user)
     $apiKey = "AIzaSyD80UvJvxRJoOY9o9LkiIVV48WknJTZzPE";
-    $apiUrl = "https://www.googleapis.com/books/v1/volumes?q=" . urlencode($searchQuery) . "&key=" . $apiKey; // encode la chaine de caractère pour l'utiliser dans l'url joint les chaînes
+    $apiUrl = "https://www.googleapis.com/books/v1/volumes?q=" . urlencode($search) . "&key=" . $apiKey; // encode la chaine de caractère pour assurer qu'elle soit formter (ex:20%)
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $apiUrl);

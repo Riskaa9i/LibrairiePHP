@@ -28,7 +28,7 @@ try {
     echo '<script>
         setTimeout(function() {
             window.location.href = "search.php";
-            }, 3000);
+            }, 2000);
         </script>';
     } else {
         echo "⚠️ Ce livre est déjà dans vos favoris.";
@@ -36,7 +36,7 @@ try {
     echo '<script>
         setTimeout(function() {
             window.location.href = "search.php";
-            }, 3000);
+            }, 2000);
         </script>';
 } catch (PDOException $e) {
         echo "Erreur : " . $e->getMessage();
